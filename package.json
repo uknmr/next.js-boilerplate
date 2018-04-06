@@ -1,0 +1,9 @@
+{
+  "name": "ono-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["app/*", "app-serviceworker"],
+  "main": "index.js",
+  "author": "uknmr <kanamori@mediba.jp>",
+  "license": "MIT"
+}
