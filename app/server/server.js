@@ -3,6 +3,7 @@ const express = require('express')
 const next = require('next')
 
 const dev = process.env.NODE_ENV !== 'production'
+console.log(dev)
 const dir = path.resolve(__dirname, '../foundation')
 const app = next({ dev, dir })
 const handle = app.getRequestHandler()
