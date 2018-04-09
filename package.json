@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": ["app/*", "app-serviceworker"],
+  "scripts": {
+    "build": "next build app/foundation",
+    "start": "NODE_ENV=production node app/server/server.js",
+    "dev": "node app/server/server.js"
+  },
   "main": "index.js",
   "author": "uknmr <kanamori@mediba.jp>",
   "license": "MIT"
