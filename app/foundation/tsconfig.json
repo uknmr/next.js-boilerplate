@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ESNEXT",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+    "module": "ESNext",                       /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018"
+    ],                                        /* Specify library files to be included in the compilation. */
+    "allowJs": true,                          /* Allow javascript files to be compiled. */
+    "jsx": "preserve",                        /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    "sourceMap": true,                        /* Generates corresponding '.map' file. */
+    "removeComments": true,                   /* Do not emit comments to output. */
+    "preserveConstEnums": true,               /* Do not erase const enum declarations in generated code. */
+    "skipLibCheck": true,                     /* Skip type checking of all declaration files (*.d.ts). */
+
+    /* Strict Type-Checking Options */
+    "strict": false,                          /* Enable all strict type-checking options. */
+
+    /* Additional Checks */
+    "noUnusedLocals": true,                   /* Report errors on unused locals. */
+    "noUnusedParameters": true,               /* Report errors on unused parameters. */
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",               /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": "./",                          /* Base directory to resolve non-absolute module names. */
+    "typeRoots": [
+      "./node_modules/@types"
+    ],                                        /* List of folders to include type definitions from. */
+    "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+
+    /* Source Map Options */
+    // "sourceRoot": "./",                    /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+    // "mapRoot": "./",                       /* Specify the location where debugger should locate map files instead of generated locations. */
+    // "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. */
+    // "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
