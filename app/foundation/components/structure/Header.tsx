@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-const Fragment = React.Fragment
 
 const Header = styled.header`
   background-color: #f28db2;

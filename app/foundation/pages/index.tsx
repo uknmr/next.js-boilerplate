@@ -1,31 +1,50 @@
+import React from 'react'
 import Layout from '../components/structure/Layout'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
-const Index = props => (
-  <Layout>
-    <h1>Posts</h1>
+interface IPostProps {
+  id: number
+  title: string
+}
 
-    <ul>
-      {props.posts.map(post => (
-        <li key={post.id}>
-          <Link as={`/posts/${post.id}`} href={`/post?id=${post.id}`}>
-            <a>{post.title}</a>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </Layout>
-)
+interface IIndexProps {
+  posts: Array<IPostProps>
+}
 
-Index.getInitialProps = async () => {
-  const res = await fetch('http://jsonplaceholder.typicode.com/posts/')
-  const posts = await res.json()
+class Index extends React.Component<IIndexProps, any> {
+  static async getInitialProps() {
+    const res = await fetch('http://jsonplaceholder.typicode.com/posts/')
+    const posts = await res.json()
 
-  console.log(`Fetched posts: ${posts.length}`)
+    console.log(`Fetched posts: ${posts.length}`)
 
-  return {
-    posts,
+    return {
+      posts,
+    }
+  }
+
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    const { posts } = this.props
+    return (
+      <Layout>
+        <h1>Posts</h1>
+
+        <ul>
+          {posts.map(post => (
+            <li key={post.id}>
+              <Link as={`/posts/${post.id}`} href={`/post?id=${post.id}`}>
+                <a>{post.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Layout>
+    )
   }
 }
 

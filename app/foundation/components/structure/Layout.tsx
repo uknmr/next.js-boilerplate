@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from './Header'
 import { injectGlobal } from 'styled-components'
 const Fragment = React.Fragment
