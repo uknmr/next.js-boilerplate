@@ -3,15 +3,6 @@ import Layout from '../components/structure/Layout'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 
-interface IPostProps {
-  id: number
-  title: string
-}
-
-interface IIndexProps {
-  posts: Array<IPostProps>
-}
-
 class Index extends React.Component<IIndexProps, any> {
   static async getInitialProps() {
     const res = await fetch('http://jsonplaceholder.typicode.com/posts/')
@@ -19,9 +10,7 @@ class Index extends React.Component<IIndexProps, any> {
 
     console.log(`Fetched posts: ${posts.length}`)
 
-    return {
-      posts,
-    }
+    return { posts }
   }
 
   constructor(props) {
@@ -30,6 +19,7 @@ class Index extends React.Component<IIndexProps, any> {
 
   render() {
     const { posts } = this.props
+
     return (
       <Layout>
         <h1>Posts</h1>

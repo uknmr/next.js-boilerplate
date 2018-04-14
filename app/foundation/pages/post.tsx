@@ -1,22 +1,33 @@
+import React from 'react'
 import Layout from '../components/structure/Layout'
 import fetch from 'isomorphic-unfetch'
 
-const Post = props => (
-  <Layout>
-    <h1>{props.post.title}</h1>
+class Post extends React.Component<IPostProps, any> {
+  static async getInitialProps(context) {
+    const { id } = context.query
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    const post = await res.json()
 
-    <p>{props.post.body}</p>
-  </Layout>
-)
+    console.log(`Fetched post: ${post.title}`)
 
-Post.getInitialProps = async context => {
-  const { id } = context.query
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-  const post = await res.json()
+    return post
+  }
 
-  console.log(`Fetched post: ${post.title}`)
+  constructor(props) {
+    super(props)
+  }
 
-  return { post }
+  render() {
+    const post = this.props
+
+    return (
+      <Layout>
+        <h1>{post.title}</h1>
+
+        <p>{post.body}</p>
+      </Layout>
+    )
+  }
 }
 
 export default Post

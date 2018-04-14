@@ -9,10 +9,12 @@ injectGlobal`
   }
 `
 
-export default props => (
+const Layout: React.SFC = props => (
   <Fragment>
     <Header />
 
     <main>{props.children}</main>
   </Fragment>
 )
+
+export default Layout

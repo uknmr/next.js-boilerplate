@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   background-color: #f28db2;
   padding: 0.25em 0.5em;
   color: #fff;
@@ -11,6 +11,8 @@ const Header = styled.header`
     text-decoration: none;
   }
 `
+
+const Header: React.SFC = props => <StyledHeader>{props.children}</StyledHeader>
 
 export default () => (
   <Header>
